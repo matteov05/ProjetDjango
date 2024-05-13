@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formulaire de mise a jour:</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static 'paysapp/pays.css' %}">
+</head>
+<h1> Saisie de mise à jour du continent :</h1>
+
+    <form method="post" action="/paysapp/updatetraitementcontinent/{{id}}/">
+
+
+
+        {% csrf_token %}
+        {{form.as_ul}}
+        <input type="submit" value="mise à jour"/>
+    </form>
+</form>
+</html>

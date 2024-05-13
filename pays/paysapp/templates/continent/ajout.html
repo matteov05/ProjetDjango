@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formulaire de saisie</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static 'paysapp/pays.css' %}">
+</head>
+<h1> Saisie d'un nouveau Continent :</h1>
+<form method="post" action="/paysapp/traitementcontinent/">
+  <!--  {% if id != ' ' %}
+    <form method="post" action="/paysapp/updatetraitementcontinent/{{id}}/">
+
+    {% else %}
+    <form method="post" action="/paysapp/traitementcontinent/">
+        {% endif %}
+-->
+
+        {% csrf_token %}
+        {{form.as_ul}}
+        <input type="submit" value="envoyez les données"/>
+    </form>
+</form>
+</html>

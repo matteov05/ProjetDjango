@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>affichage {{pays.nom}}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static 'paysapp/pays.css' %}">
+</head>
+<body>
+    {{pays}} fait partie du continent {{pays.continent}} visité le {{pays.date_visite}}
+
+<p>
+    Avis:
+    {{pays.avis}}
+</p>
+</body>
+</html>

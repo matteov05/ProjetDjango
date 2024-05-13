@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formulaire de saisie</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static 'paysapp/pays.css' %}">
+</head>
+<body>
+    <h1> Saisie de la mise à jour du pays :</h1>
+     <form method="post" action="/paysapp/updatetraitement/{{id}}/">
+
+
+        {% csrf_token %}
+        {{form.as_ul}}
+    <input type="submit" value="mise à jour"/>
+    </form>
+</body>
+</html>

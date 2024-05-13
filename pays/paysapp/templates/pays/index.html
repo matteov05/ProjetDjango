@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static 'paysapp/pays.css' %}">
+</head>
+<body>
+<h1> Voici tous les pays que vous avez visités: </h1>
+<a href="/paysapp/"> Retour à l'accueil</a>
+<hr>
+
+<ol>
+    {% for p in liste %}
+    <li> {{p}} <br><a href="/paysapp/affiche/{{p.id}}/"> details </a> &nbsp <a href="/paysapp/update/{{p.id}}/"> mise à jour </a> &nbsp <a href="/paysapp/delete/{{p.id}}/"> supprimer </a></li>
+{% endfor %}
+</ol>
+</body>
+</html>

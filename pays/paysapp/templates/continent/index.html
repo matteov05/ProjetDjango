@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Acccueil</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static 'paysapp/pays.css' %}">
+</head>
+<body>
+<h1> bienvenue sur mon app </h1>
+<p>Sur cette app tu pourra renseigner les pays que tu as visité ainsi que les classer par continent</p>
+    <a href="/paysapp/ajoutcontinent/"> Ajouter un continent </a><br><br>
+    <a href="/paysapp/index/"> Liste des pays </a>
+<hr>
+<p>Voici la liste des continents où tu es allé :</p>
+
+<ol>
+    {% for c in liste %}
+    <li> {{c}} <br><a href="/paysapp/affichecontinent/{{c.id}}/"> details </a> &nbsp <a href="/paysapp/updatecontinent/{{c.id}}/"> mise à jour </a> &nbsp <a href="/paysapp/deletecontinent/{{c.id}}/"> supprimer </a></li>
+{% endfor %}
+</ol>
+</body>
+</html>

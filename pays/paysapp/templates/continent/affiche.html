@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>affichage {{continent.nom}}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%static 'paysapp/pays.css' %}">
+</head>
+<body>
+    {{continent}}
+
+<p>
+    Description du continent : <br>
+    {{continent.description}}
+    <hr>
+</p>
+<a href="/paysapp/ajout/{{continent.id}}/"> ajouter un pays </a>
+
+<ol>
+    Liste des pays du continent :
+
+    {% for c in liste %}
+        <li>{{c.nom}} <br><a href="/paysapp/affiche/{{c.id}}/"> details </a> &nbsp <a href="/paysapp/update/{{c.id}}/"> mise à jour </a> &nbsp <a href="/paysapp/delete/{{c.id}}/"> supprimer </a></li>
+    {% endfor %}
+</ol>
+</body>
+</html>
